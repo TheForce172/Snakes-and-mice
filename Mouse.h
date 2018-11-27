@@ -27,6 +27,12 @@ class Mouse
 
 
 
+        // getter
+
+		int get_x();
+		int get_y();
+		char symbol;
+
 	private:
 		// data members		
 		char symbol_;
@@ -39,6 +45,10 @@ class Mouse
 		// supporting functions 
 		void position_in_middle_of_grid();
 		void update_position(int dx, int dy);
+
+		
+
+
 };
 
 #endif

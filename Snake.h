@@ -18,7 +18,10 @@ class Snake {
 		void update_position(int dx, int dy);
 
 		
-		
+// getter 
+
+    int get_x();
+    int get_y();
 
 private:
 	int x_, y_;		
