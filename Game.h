@@ -8,12 +8,9 @@
 #include <sstream>
 class Game {
 public:
-	Mouse mouse_;
-	Snake snake_;
-	Underground underground_;
-	UserInterface* p_ui;
 
-	int key_;
+
+	
 	void set_up(UserInterface* pui);
 	void run();
 	string prepare_grid();
@@ -23,6 +20,12 @@ public:
 	bool has_ended(char key);
 	string prepare_end_message();
 
+private:
+	int key_;	
+	Mouse mouse_;
+	Snake snake_;
+	Underground underground_;
+	UserInterface* p_ui;
 };
 
 #endif
