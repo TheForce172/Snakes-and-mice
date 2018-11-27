@@ -51,9 +51,9 @@ string Game::prepare_grid()
 	{
 		for (int col(1); col <= SIZE; ++col)
 		{
-			if ((row == snake_.y_) && (col == snake_.x_))
+			if ((row == snake_.get_y()) && (col == snake_.get_x()))
 			{
-				os << snake_.symbol_;
+				os << snake_.get_symbol();
 			}
 			else
 			{
