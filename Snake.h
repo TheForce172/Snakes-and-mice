@@ -16,10 +16,15 @@ class Snake {
 		void set_direction(int& dx, int& dy);
 		void position_at_random();
 		void update_position(int dx, int dy);
-		char symbol_;
-		int x_, y_;
-		Mouse* p_mouse_;
-		RandomNumberGenerator rng_;
+
+		
+		
+
+private:
+	int x_, y_;		
+	char symbol_;
+	RandomNumberGenerator rng_;
+	Mouse* p_mouse_;
 };
 
 #endif 

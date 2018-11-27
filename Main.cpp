@@ -1,7 +1,4 @@
 #include <iostream>		// for output and input
-#include <string>		// for string
-#include <sstream>		// for streamstring
-
 using namespace std;
 
 #include "UserInterface.h"
