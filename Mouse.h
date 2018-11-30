@@ -29,10 +29,6 @@ class Mouse
 
         // getter
 
-		int get_x();
-		int get_y();
-		char symbol;
-
 	private:
 		// data members		
 		char symbol_;

@@ -23,7 +23,7 @@ bool Snake::is_at_position(int x, int y)
 
 bool Snake::has_caught_mouse()
 {
-	return is_at_position(p_mouse_->x_, p_mouse_->y_);
+	return is_at_position(p_mouse_->get_x(), p_mouse_->get_y());
 }
 
 void Snake::spot_mouse(Mouse* p_mouse)
@@ -77,4 +77,18 @@ void Snake::position_at_random()
 
 	x_ = rng_.get_random_value(SIZE);
 	y_ = rng_.get_random_value(SIZE);
+}
+
+char Snake::get_symbol() {
+	return symbol_;
+}
+
+int Snake::get_x()
+{
+	return x_;
+}
+
+int Snake::get_y()
+{
+	return y_;
 }

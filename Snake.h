@@ -22,6 +22,7 @@ class Snake {
 
     int get_x();
     int get_y();
+	char get_symbol();
 
 private:
 	int x_, y_;		
