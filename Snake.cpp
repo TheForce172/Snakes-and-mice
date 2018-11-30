@@ -16,12 +16,12 @@ Snake::~Snake()
 {
 }
 
-bool Snake::is_at_position(int x, int y)
+bool Snake::is_at_position(int x, int y) const
 {
 	return (x_ == x) && (y_ == y);
 }
 
-bool Snake::has_caught_mouse()
+bool Snake::has_caught_mouse() const
 {
 	return is_at_position(p_mouse_->get_x(), p_mouse_->get_y());
 }
@@ -79,16 +79,16 @@ void Snake::position_at_random()
 	y_ = rng_.get_random_value(SIZE);
 }
 
-char Snake::get_symbol() {
+char Snake::get_symbol() const {
 	return symbol_;
 }
 
-int Snake::get_x()
+int Snake::get_x() const
 {
 	return x_;
 }
 
-int Snake::get_y()
+int Snake::get_y() const
 {
 	return y_;
 }

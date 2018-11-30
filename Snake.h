@@ -9,8 +9,8 @@ class Snake {
 	public:
 		Snake();
 		~Snake();
-		bool is_at_position(int x, int y);  
-		bool has_caught_mouse() ;
+		bool is_at_position(int x, int y) const;  
+		bool has_caught_mouse() const;
 		void spot_mouse(Mouse* p_mouse);
 		void chase_mouse();
 		void set_direction(int& dx, int& dy);
@@ -20,9 +20,9 @@ class Snake {
 		
 // getter 
 
-    int get_x();
-    int get_y();
-	char get_symbol();
+    int get_x() const;
+    int get_y() const;
+	char get_symbol() const;
 
 private:
 	int x_, y_;		
