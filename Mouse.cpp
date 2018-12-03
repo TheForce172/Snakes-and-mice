@@ -5,12 +5,12 @@ Mouse::Mouse() : symbol_(MOUSE), x_(0), y_(0), alive_(true), escaped_(false), mo
 	position_in_middle_of_grid();
 }
 
-int Mouse::get_x()
+int Mouse::get_x() const
 {
 	return x_;
 }
 
-int Mouse::get_y()
+int Mouse::get_y() const
 {
 	return y_;
 }

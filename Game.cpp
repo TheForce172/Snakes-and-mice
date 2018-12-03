@@ -41,7 +41,7 @@ void Game::run()
 	p_ui->show_results_on_screen(prepare_end_message());
 }
 
-string Game::prepare_grid()
+string Game::prepare_grid() const
 {
 	// this function builds up a big string which holds the entire game state
 
@@ -78,12 +78,12 @@ string Game::prepare_grid()
 	return os.str();
 }
 
-bool Game::is_arrow_key_code(int keycode)
+bool Game::is_arrow_key_code(int keycode) const
 {
 	return (keycode == LEFT) || (keycode == RIGHT) || (keycode == UP) || (keycode == DOWN);
 }
 
-int Game::find_hole_number_at_position(int x, int y)
+int Game::find_hole_number_at_position(int x, int y) const
 {
 	for (int h_no(0); h_no < underground_.holes_.size(); ++h_no)
 	{
@@ -111,7 +111,7 @@ void Game::apply_rules()
 	}
 }
 
-bool Game::has_ended(char key)
+bool Game::has_ended(char key) const
 {
 	return ((key == 'Q') || (!mouse_.is_alive()) || (mouse_.has_escaped()));
 }
