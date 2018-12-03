@@ -116,7 +116,7 @@ bool Game::has_ended(char key) const
 	return ((key == 'Q') || (!mouse_.is_alive()) || (mouse_.has_escaped()));
 }
 
-string Game::prepare_end_message()
+string Game::prepare_end_message() const
 {
 	ostringstream os;
 	if (mouse_.has_escaped())

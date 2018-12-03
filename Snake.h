@@ -1,4 +1,3 @@
-
 #ifndef SnakeH
 #define SnakeH 
 
@@ -26,7 +25,7 @@ class Snake {
 
 private:
 	int x_, y_;		
-	char symbol_;
+	const char symbol_;
 	RandomNumberGenerator rng_;
 	Mouse* p_mouse_;
 };

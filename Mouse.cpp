@@ -20,7 +20,7 @@ char Mouse::get_symbol() const
 	return symbol_;
 }
 
-bool Mouse::is_at_position(int x, int y)
+bool Mouse::is_at_position(int x, int y) const
 {
 	return (x_ == x) && (y_ == y);
 }
@@ -35,7 +35,7 @@ bool Mouse::has_escaped() const
 	return escaped_;
 }
 
-bool Mouse::has_reached_a_hole(Underground ug)
+bool Mouse::has_reached_a_hole(Underground ug) const
 {
 	for (int h_no(0); h_no < ug.holes_.size(); ++h_no)
 	{

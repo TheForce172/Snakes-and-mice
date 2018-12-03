@@ -20,12 +20,12 @@ char Nut::get_symbol() const
 	return symbol_;
 }
 
-bool Nut::is_at_position(int x, int y)
+bool Nut::is_at_position(int x, int y) const
 {
 	return (x_ == x) && (y_ == y);
 }
 
-bool Nut::is_collected(int x, int y)
+bool Nut::is_collected(int x, int y) const
 {
 	return true;
 }

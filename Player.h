@@ -9,12 +9,12 @@ public:
 	Player(string);
 	~Player();
 
-	string get_name();
-	int get_score();
+	string get_name() const;
+	int get_score() const;
 
 	void update_score(int amt);
 private:
-	const string name;
+	const string name_;
 	Score score;
 };
 

@@ -15,8 +15,8 @@ class Nut
 	Nut(int x, int y);
 
 	// assessors
-	bool is_collected(int x, int y);
-	bool is_at_position(int x, int y);
+	bool is_collected(int x, int y) const;
+	bool is_at_position(int x, int y) const;
 
 	// mutator
 	void disappear();

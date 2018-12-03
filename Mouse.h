@@ -15,10 +15,10 @@ class Mouse
 		int get_x() const;
 		int get_y() const;
 		char get_symbol() const;
-		bool is_at_position(int x, int y);
+		bool is_at_position(int x, int y) const;
 		bool is_alive() const;
 		bool has_escaped() const;
-		bool has_reached_a_hole(Underground ug);
+		bool has_reached_a_hole(Underground ug) const;
 
 		// mutators
 		void die();
@@ -31,7 +31,7 @@ class Mouse
 
 	private:
 		// data members		
-		char symbol_;
+		const char symbol_;
 		int  x_, y_;
 		bool alive_;
 		bool escaped_;

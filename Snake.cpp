@@ -1,11 +1,7 @@
-#include "Constants.h"
-#include "Mouse.h"
-#include "RandomNumberGenerator.h"
 #include "Snake.h"
 
-Snake::Snake()
+Snake::Snake() : symbol_(SNAKEHEAD)
 {
-	symbol_ = SNAKEHEAD;
 	position_at_random();
 
 	// make the pointer safe before the snake spots the mouse
