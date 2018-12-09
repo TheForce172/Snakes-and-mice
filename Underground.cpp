@@ -3,9 +3,11 @@
 // number of holes in underground
 const int MAXHOLES(3);
 
-Underground::Underground() : holes_(MAXHOLES)
+Underground::Underground(vector<Hole> list) : holes_(list)
 {
 }
+
+Underground Underground::oper
 
 Hole Underground::get_hole_no(int no) const
 {
@@ -33,4 +35,8 @@ void Underground::set_hole_no_at_position(int no, int x, int y)
 bool Underground::is_valid_hole_number(int no) const
 {
 	return (no >= 0) && (no < holes_.size());
+}
+
+int Underground::get_num_holes() const{
+	return holes_.size;
 }

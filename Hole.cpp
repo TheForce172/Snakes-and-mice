@@ -1,7 +1,4 @@
 #include "Hole.h"
-Hole::Hole()
-{
-}
 
 Hole::Hole(int x, int y) : symbol_(HOLE), x_(x), y_(y)
 {

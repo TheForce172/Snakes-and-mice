@@ -4,7 +4,6 @@ class Hole
 {
 public:
 	// constructors
-	Hole();
 	Hole(int x, int y);
 
 	// assessors

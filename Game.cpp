@@ -4,12 +4,12 @@ using namespace std;
 void Game::set_up(UserInterface* pui)
 {
 	// set up the holes
-	underground_.set_hole_no_at_position(0, 4, 3);
-	underground_.set_hole_no_at_position(1, 15, 10);
-	underground_.set_hole_no_at_position(2, 7, 15);
-
+	//underground_.set_hole_no_at_position(0, 4, 3);
+	//underground_.set_hole_no_at_position(1, 15, 10);
+	//underground_.set_hole_no_at_position(2, 7, 15);
+	vector<Hole> list = { Hole(4,3), Hole(15,10), Hole(7,15) };
 	// mouse state already set up in its contructor
-
+	underground_ = Underground(list);
 	// set up snake
 	snake_.position_at_random();
 	snake_.spot_mouse(&mouse_);
@@ -85,7 +85,7 @@ bool Game::is_arrow_key_code(int keycode) const
 
 int Game::find_hole_number_at_position(int x, int y) const
 {
-	for (int h_no(0); h_no < underground_.holes_.size(); ++h_no)
+	for (int h_no(0); h_no < underground_.get_num_holes(); ++h_no)
 	{
 		if (underground_.get_hole_no(h_no).is_at_position(x, y))
 		{
