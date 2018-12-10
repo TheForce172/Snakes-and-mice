@@ -9,10 +9,14 @@ UserInterface ui;
 
 int main()
 {
-	Game game;
-
-	game.set_up(&ui);
-	game.run();
+	cout << "Please input your Name";
+	string n;
+	cin >> n;
+	Game game(n);
+	do {
+		game.set_up(&ui);
+		game.run();
+	} while (game.play());
 
 	ui.hold_window();
 	return 0;

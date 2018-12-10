@@ -4,12 +4,12 @@
 #include "Mouse.h"
 #include"Snake.h"
 #include"UserInterface.h"
+#include "Player.h"
 #include <iostream>
 #include <sstream>
 class Game {
 public:
-
-	Game();
+	Game(string);
 	
 	void set_up(UserInterface* pui);
 	void run();
@@ -26,6 +26,7 @@ private:
 	Snake snake_;
 	Underground underground_;
 	UserInterface* p_ui;
+	Player player_;
 };
 
 #endif
