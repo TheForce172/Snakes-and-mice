@@ -112,6 +112,14 @@ void Game::apply_rules()
 		{
 			mouse_.escape_into_hole();
 		}
+		else 
+		{
+			if (mouse_.can_collect_nut(nut_))
+			{
+				got_nut = true;
+			}
+		}
+		
 	}
 }
 

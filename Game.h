@@ -4,6 +4,7 @@
 #include "Mouse.h"
 #include"Snake.h"
 #include"UserInterface.h"
+#include "Nut.h"
 #include <iostream>
 #include <sstream>
 class Game {
@@ -21,9 +22,11 @@ public:
 	string prepare_end_message() const;
 
 private:
-	int key_;	
+	int key_;
+	bool got_nut;
 	Mouse mouse_;
 	Snake snake_;
+	Nut nut_;
 	Underground underground_;
 	UserInterface* p_ui;
 };

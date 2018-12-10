@@ -104,3 +104,7 @@ void Mouse::position_in_middle_of_grid()
 	x_ = SIZE / 2;
 	y_ = SIZE / 2;
 }
+ 
+
+
+

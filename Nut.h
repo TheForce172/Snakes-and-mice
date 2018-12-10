@@ -26,6 +26,9 @@ class Nut
 	int get_y() const;
 	char get_symbol() const;
 
+	
+
+	
 
 };
 
