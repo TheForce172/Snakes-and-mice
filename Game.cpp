@@ -1,7 +1,7 @@
 #include "Game.h"
 using namespace std;
 
-Game::Game() {
+Game::Game(string n) : player_(n) {
 	//vector<Hole> list = { Hole(4,3), Hole(15,10), Hole(7,15) };
 	//underground_(list);
 
@@ -43,6 +43,10 @@ void Game::run()
 	}
 
 	p_ui->show_results_on_screen(prepare_end_message());
+	cout << "Press y to continue";
+	key_ = p_ui->get_keypress_from_user();
+	if key
+
 }
 
 string Game::prepare_grid() const
