@@ -9,7 +9,7 @@
 class Game {
 public:
 
-
+	Game();
 	
 	void set_up(UserInterface* pui);
 	void run();

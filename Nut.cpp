@@ -2,7 +2,7 @@
 
 Nut::Nut(int x, int y) : symbol_(NUT), x_(0), y_(0)
 {
-	disappear();
+	//disappear();
 }
 
 int Nut::get_x() const

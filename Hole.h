@@ -14,7 +14,6 @@ public:
 
 private:
 	static const int MAXHOLES; // number of holes in underground
-
 							   // data members
 	const char symbol_;
 	const int x_, y_;
