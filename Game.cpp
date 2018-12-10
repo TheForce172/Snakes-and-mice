@@ -1,15 +1,19 @@
 #include "Game.h"
 using namespace std;
 
+Game::Game() {
+	//vector<Hole> list = { Hole(4,3), Hole(15,10), Hole(7,15) };
+	//underground_(list);
+
+}
+
 void Game::set_up(UserInterface* pui)
 {
 	// set up the holes
-	//underground_.set_hole_no_at_position(0, 4, 3);
-	//underground_.set_hole_no_at_position(1, 15, 10);
-	//underground_.set_hole_no_at_position(2, 7, 15);
-	vector<Hole> list = { Hole(4,3), Hole(15,10), Hole(7,15) };
+	underground_.set_hole_no_at_position(0, 4, 3);
+	underground_.set_hole_no_at_position(1, 15, 10);
+	underground_.set_hole_no_at_position(2, 7, 15);
 	// mouse state already set up in its contructor
-	underground_ = Underground(list);
 	// set up snake
 	snake_.position_at_random();
 	snake_.spot_mouse(&mouse_);
