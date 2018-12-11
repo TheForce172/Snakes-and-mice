@@ -1,14 +1,7 @@
 #include "Hole.h"
-Hole::Hole() : symbol_(HOLE)
-{
-}
 
 Hole::Hole(int x, int y) : symbol_(HOLE), x_(x), y_(y)
 {
-}
-void Hole::operator=(const Hole& rhs) {
-	x_ = rhs.x_;
-	y_ = rhs.y_;
 }
 
 

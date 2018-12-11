@@ -20,8 +20,10 @@ public:
 	int find_hole_number_at_position(int x, int y) const;
 	bool has_ended(char key) const;
 	string prepare_end_message() const;
-
+	bool is_continue_key_code(int) const;
+	bool play() const;
 private:
+	bool play_;
 	int key_;
 	bool got_nut;
 	Mouse mouse_;

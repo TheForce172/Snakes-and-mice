@@ -20,5 +20,7 @@
 
 // defining the other command letters
 #define QUIT      ('Q')	// to end game
+#define CONTINUESMALL  ('y')
+#define CONTINUEBIG    ('Y')
 
 #endif

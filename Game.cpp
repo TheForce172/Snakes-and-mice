@@ -1,9 +1,7 @@
 #include "Game.h"
 using namespace std;
 
-Game::Game(string n) : player_(n) {
-	//vector<Hole> list = { Hole(4,3), Hole(15,10), Hole(7,15) };
-	//underground_(list);
+Game::Game(string n) : player_(n), underground_({ Hole(4,3), Hole(15,10), Hole(7,15) }) {
 
 }
 
@@ -43,10 +41,14 @@ void Game::run()
 	}
 
 	p_ui->show_results_on_screen(prepare_end_message());
-	cout << "Press y to continue";
+	cout << "Press y to continue, anything else to quit";
 	key_ = p_ui->get_keypress_from_user();
-	if key
-
+	if (is_continue_key_code(key_)) {
+		play_ = true;
+	}
+	else {
+		play_ = false;
+	}
 }
 
 string Game::prepare_grid() const
@@ -151,4 +153,13 @@ string Game::prepare_end_message() const
 		}
 	}
 	return os.str();
+}
+
+bool Game::is_continue_key_code(int keycode) const
+{
+	return (keycode == CONTINUESMALL) || (keycode == CONTINUEBIG);
+}
+
+bool Game::play() const {
+	return play_;
 }
