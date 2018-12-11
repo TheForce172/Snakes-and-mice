@@ -4,12 +4,13 @@
 #include "Mouse.h"
 #include"Snake.h"
 #include"UserInterface.h"
+#include "Nut.h"
+#include "Player.h"
 #include <iostream>
 #include <sstream>
 class Game {
 public:
-
-	Game();
+	Game(string);
 	
 	void set_up(UserInterface* pui);
 	void run();
@@ -19,13 +20,18 @@ public:
 	int find_hole_number_at_position(int x, int y) const;
 	bool has_ended(char key) const;
 	string prepare_end_message() const;
-
+	bool is_continue_key_code(int) const;
+	bool play() const;
 private:
-	int key_;	
+	bool play_;
+	int key_;
+	bool got_nut;
 	Mouse mouse_;
 	Snake snake_;
+	Nut nut_;
 	Underground underground_;
 	UserInterface* p_ui;
+	Player player_;
 };
 
 #endif

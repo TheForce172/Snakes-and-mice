@@ -2,7 +2,7 @@
 
 
 
-Score::Score()
+Score::Score() : amount_(0)
 {
 }
 

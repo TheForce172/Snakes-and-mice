@@ -13,8 +13,7 @@ using namespace std;
 class Underground
 {
 	public:
-		Underground();
-		Underground(vector<Hole> list);
+		Underground(vector<Hole>);
 		Hole get_hole_no(int no) const;
 		void set_hole_no_at_position(int no, int x, int y);
 		size_t get_num_holes() const;

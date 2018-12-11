@@ -27,6 +27,9 @@ private:
 	char symbol_;
 	bool collected;
 
+	
+
+	
 
 };
 

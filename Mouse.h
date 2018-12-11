@@ -4,6 +4,7 @@
 
 #include "constants.h"
 #include "Underground.h"
+#include "Nut.h"
 
 class Mouse
 {
@@ -19,6 +20,7 @@ class Mouse
 		bool is_alive() const;
 		bool has_escaped() const;
 		bool has_reached_a_hole(Underground ug) const;
+		bool can_collect_nut(Nut) const;
 
 		// mutators
 		void die();

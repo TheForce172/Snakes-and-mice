@@ -4,6 +4,7 @@ Hole::Hole(int x, int y) : symbol_(HOLE), x_(x), y_(y)
 {
 }
 
+
 int Hole::get_x() const
 {
 	return x_;
