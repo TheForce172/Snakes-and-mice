@@ -10,7 +10,7 @@
 class Mouse : public MoveableGridItem{
 	public:
 		// constructor
-		Mouse();
+		Mouse(int, int);
 
 		// assessors
 		int get_x() const;

@@ -6,7 +6,7 @@
 #include "MoveableGridItem.h"
 class Snake : public MoveableGridItem{
 	public:
-		Snake();
+		Snake(int, int);
 		~Snake();
 		bool is_at_position(int x, int y) const;  
 		bool has_caught_mouse() const;

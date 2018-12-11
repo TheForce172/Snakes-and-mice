@@ -1,6 +1,6 @@
 #include "Snake.h"
 
-Snake::Snake() : symbol_(SNAKEHEAD)
+Snake::Snake(int x, int y) : MoveableGridItem(x, y), symbol_(SNAKEHEAD)
 {
 	position_at_random();
 

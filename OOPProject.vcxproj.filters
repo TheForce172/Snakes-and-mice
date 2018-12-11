@@ -98,7 +98,7 @@
     <ClInclude Include="GridItem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MoveAbleGridItem.h">
+    <ClInclude Include="MoveableGridItem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

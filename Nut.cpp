@@ -1,6 +1,6 @@
 #include "Nut.h"
 
-Nut::Nut() : symbol_(NUT), x_(8), y_(9)
+Nut::Nut(int x, int y) : MoveableGridItem(x, y), symbol_(NUT)
 {
 	//disappear();
 	//int x = 8;
@@ -14,7 +14,7 @@ int Nut::get_x() const
 
 int Nut::get_y() const
 {
-	return x_;
+	return y_;
 }
 
 char Nut::get_symbol() const
@@ -30,4 +30,8 @@ bool Nut::is_at_position(int x, int y) const
 bool Nut::has_been_collected(int x, int y) const
 {
 	return true;
+}
+
+void disappear() {
+
 }

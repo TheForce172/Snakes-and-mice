@@ -40,7 +40,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="GridItem.h" />
     <ClInclude Include="Hole.h" />
-    <ClInclude Include="MoveAbleGridItem.h" />
+    <ClInclude Include="MoveableGridItem.h" />
     <ClInclude Include="Nut.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Score.h" />
