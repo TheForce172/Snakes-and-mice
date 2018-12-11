@@ -1,10 +1,10 @@
 #include "Nut.h"
 
-Nut::Nut(int x, int y) : symbol_(NUT), x_(0), y_(0)
+Nut::Nut() : symbol_(NUT), x_(8), y_(9)
 {
 	//disappear();
-	int x = 8;
-	int y = 9;
+	//int x = 8;
+	//int y = 9;
 }
 
 int Nut::get_x() const

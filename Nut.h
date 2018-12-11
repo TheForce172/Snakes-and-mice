@@ -7,7 +7,7 @@
 class Nut : public MoveableGridItem{
 public:
 	// constructor
-	Nut(int x, int y);
+	Nut();
 	
 	int get_x() const;
 	int get_y() const;
