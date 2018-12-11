@@ -3,6 +3,8 @@
 Nut::Nut(int x, int y) : symbol_(NUT), x_(0), y_(0)
 {
 	//disappear();
+	int x = 8;
+	int y = 9;
 }
 
 int Nut::get_x() const
@@ -25,7 +27,7 @@ bool Nut::is_at_position(int x, int y) const
 	return (x_ == x) && (y_ == y);
 }
 
-bool Nut::is_collected(int x, int y) const
+bool Nut::has_been_collected(int x, int y) const
 {
 	return true;
 }
