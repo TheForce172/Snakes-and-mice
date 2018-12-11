@@ -1,4 +1,4 @@
-#ifndef MoveableGridItem
+#ifndef MoveableGridItemH
 #define MoveableGridItemH
 
 #include "Constants.h"

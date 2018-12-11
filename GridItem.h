@@ -1,4 +1,4 @@
-#ifndef GridItem
+#ifndef GridItemH
 #define GridItemH
 
 

@@ -1,4 +1,4 @@
-#ifndef FixedGridItem
+#ifndef FixedGridItemH
 #define FixedGridItemH
 #include "GridItem.h"
 

@@ -32,9 +32,6 @@ private:
 	Underground underground_;
 	UserInterface* p_ui;
 	Player player_;
-	GridItem griditem_;
-	MoveAbleGridItem moveablegriditem_;
-	FixedGridItem fixedgridItem;
 };
 
 #endif
