@@ -5,9 +5,9 @@
 #include "constants.h"
 #include "Underground.h"
 #include "Nut.h"
+#include "MoveableGridItem.h"
 
-class Mouse
-{
+class Mouse : public MoveableGridItem{
 	public:
 		// constructor
 		Mouse();

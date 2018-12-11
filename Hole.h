@@ -1,7 +1,7 @@
 #pragma once
 #include "constants.h"
-class Hole
-{
+#include "FixedGridItem.h"
+class Hole : public FixedGridItem{
 public:
 	// constructors
 	Hole(int x, int y);

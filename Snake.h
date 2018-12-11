@@ -3,8 +3,8 @@
 
 #include "Mouse.h"
 #include "RandomNumberGenerator.h"
-
-class Snake {
+#include "MoveableGridItem.h"
+class Snake : public MoveableGridItem{
 	public:
 		Snake();
 		~Snake();

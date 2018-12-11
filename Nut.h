@@ -2,9 +2,9 @@
 #define NutH
 
 #include "Constants.h"
+#include "MoveableGridItem.h"
 
-
-class Nut{
+class Nut : public MoveableGridItem{
 public:
 	// constructor
 	Nut(int x, int y);
