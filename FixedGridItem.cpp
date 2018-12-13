@@ -1,6 +1,6 @@
 #include "FixedGridItem.h"
 
-FixedGridItem::FixedGridItem(const int x, const int y, char& symbol):GridItem(symbol),x_(x),y_(y)
+FixedGridItem::FixedGridItem(const int x, const int y, char symbol):GridItem(symbol),x_(x),y_(y)
 {}
 
 const int FixedGridItem::get_x() {

@@ -6,7 +6,7 @@ class FixedGridItem : public GridItem
 {
 
 public:
-	FixedGridItem(int x, int y, char& symbol);
+	FixedGridItem(int x, int y, char symbol);
 
 	const int get_x();
 	const int get_y();

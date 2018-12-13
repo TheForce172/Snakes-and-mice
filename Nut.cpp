@@ -1,6 +1,6 @@
 #include "Nut.h"
 
-Nut::Nut(int x, int y) : MoveableGridItem(x, y), symbol_(NUT)
+Nut::Nut(int x, int y) : MoveableGridItem(x, y, NUT)
 {
 	//disappear();
 	//int x = 8;

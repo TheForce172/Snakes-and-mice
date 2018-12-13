@@ -4,11 +4,6 @@ Mouse::Mouse(int x, int y) : MoveableGridItem(x, y, MOUSE), alive_(true), escape
 {
 }
 
-bool Mouse::is_at_position(int x, int y) const
-{
-	return (this->get_x == x) && (this->get_y == y);
-}
-
 bool Mouse::is_alive() const
 {
 	return alive_;
@@ -71,7 +66,7 @@ void Mouse::scamper(char k)
 	}
 
 	// update mouse coordinates if move is possible
-	if (((this->get_x + mouse_dx_) >= 1) && ((this->get_x + mouse_dx_) <= SIZE) && ((this->get_y + mouse_dy_) >= 1) && ((this->get_y + mouse_dy_) <= SIZE))
+	if (((get_x() + mouse_dx_) >= 1) && ((get_x() + mouse_dx_) <= SIZE) && ((get_y() + mouse_dy_) >= 1) && ((get_y() + mouse_dy_) <= SIZE))
 	{
 		update_position(mouse_dx_, mouse_dy_);
 	}

@@ -21,7 +21,7 @@ MoveableGridItem::MoveableGridItem(int x, int y, const char symbol) : GridItem(s
 
 	}
 
-	void MoveableGridItem::update_position(int dx, int dy) {
+	void MoveableGridItem::update_position(const int dx, const int dy) {
 		x_ += dx;
 		y_ += dy;
 	}

@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Game::Game(string n) : player_(n), underground_({ Hole(4,3), Hole(15,10), Hole(7,15) }), mouse_(0,0) {
+Game::Game(string n) : player_(n), underground_({ Hole(4,3), Hole(15,10), Hole(7,15) }), mouse_(0,0), snake_(0,0), nut_(8,9) {
 
 }
 
