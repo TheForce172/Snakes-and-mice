@@ -1,21 +1,16 @@
 #include "FixedGridItem.h"
 
-FixedGridItem::FixedGridItem(int x, int y) : x(x), y(y) {
+FixedGridItem::FixedGridItem(const int x, const int y, char& symbol):GridItem(symbol),x(x),y(y)
+{}
 
-
-
+const int FixedGridItem::get_x() {
+	return x;
 }
 
-void get_x() {
-
-
+const int FixedGridItem::get_y() {
+	return y;
 }
 
-void get_y() {
-
-
-}
-
-void is_at_postion(int x, int y) {
-
+const bool FixedGridItem::is_at_postion(const int x, const int y) {
+	return (x == x) && (y == y);
 }

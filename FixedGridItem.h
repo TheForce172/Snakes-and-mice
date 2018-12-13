@@ -2,14 +2,15 @@
 #define FixedGridItemH
 #include "GridItem.h"
 
-class FixedGridItem : public GridItem {
+class FixedGridItem : public GridItem 
+{
 
-
-	FixedGridItem(int x, int y);
 public:
-	bool is_at_position(int x, int y) const;	
-	int get_x() const;
-	int get_y() const;
+	FixedGridItem(int x, int y, char& symbol);
+
+	const int get_x();
+	const int get_y();
+	const bool is_at_position(const int x, const int y);	
 
 private:
 	int x, y;
