@@ -14,9 +14,10 @@ public:
 	void update_position(int dx, int dy);
 	void reset_position(int x, int y);
 	void position_at_random();
+	void set_position(const int, const int);
 	RandomNumberGenerator rng_;
 private:
-	int x, y;
+	int x_, y_;
 };
 
 #endif

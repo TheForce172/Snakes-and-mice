@@ -10,9 +10,9 @@ public:
 
 	const int get_x();
 	const int get_y();
-	const bool is_at_position(const int x, const int y);	
+	bool is_at_position(const int x, const int y) const;	
 
 private:
-	int x, y;
+	const int x_, y_;
 };
 #endif

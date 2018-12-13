@@ -1,28 +1,12 @@
 #include "Mouse.h"
 
-Mouse::Mouse(int x, int y) : MoveableGridItem(x, y), symbol_(MOUSE), x_(0), y_(0), alive_(true), escaped_(false), mouse_dx_(0), mouse_dy_(0)
+Mouse::Mouse(int x, int y) : MoveableGridItem(x, y, MOUSE), alive_(true), escaped_(false), mouse_dx_(0), mouse_dy_(0)
 {
-	position_in_middle_of_grid();
-}
-
-int Mouse::get_x() const
-{
-	return x_;
-}
-
-int Mouse::get_y() const
-{
-	return y_;
-}
-
-char Mouse::get_symbol() const
-{
-	return symbol_;
 }
 
 bool Mouse::is_at_position(int x, int y) const
 {
-	return (x_ == x) && (y_ == y);
+	return (this->get_x == x) && (this->get_y == y);
 }
 
 bool Mouse::is_alive() const
@@ -87,22 +71,15 @@ void Mouse::scamper(char k)
 	}
 
 	// update mouse coordinates if move is possible
-	if (((x_ + mouse_dx_) >= 1) && ((x_ + mouse_dx_) <= SIZE) && ((y_ + mouse_dy_) >= 1) && ((y_ + mouse_dy_) <= SIZE))
+	if (((this->get_x + mouse_dx_) >= 1) && ((this->get_x + mouse_dx_) <= SIZE) && ((this->get_y + mouse_dy_) >= 1) && ((this->get_y + mouse_dy_) <= SIZE))
 	{
 		update_position(mouse_dx_, mouse_dy_);
 	}
 }
 
-void Mouse::update_position(int dx, int dy)
-{
-	x_ += dx;
-	y_ += dy;
-}
-
 void Mouse::position_in_middle_of_grid()
 {
-	x_ = SIZE / 2;
-	y_ = SIZE / 2;
+	set_position(SIZE / 2, SIZE / 2);
 }
  
 

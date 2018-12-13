@@ -13,8 +13,8 @@ class Mouse : public MoveableGridItem{
 		Mouse(int, int);
 
 		// assessors
-		int get_x() const;
-		int get_y() const;
+		//int get_x() const;
+		//int get_y() const;
 		char get_symbol() const;
 		bool is_at_position(int x, int y) const;
 		bool is_alive() const;
@@ -33,8 +33,6 @@ class Mouse : public MoveableGridItem{
 
 	private:
 		// data members		
-		const char symbol_;
-		int  x_, y_;
 		bool alive_;
 		bool escaped_;
 		int mouse_dx_;
@@ -42,11 +40,6 @@ class Mouse : public MoveableGridItem{
 
 		// supporting functions 
 		void position_in_middle_of_grid();
-		void update_position(int dx, int dy);
-
-		
-
-
 };
 
 #endif
