@@ -2,6 +2,7 @@
 
 Mouse::Mouse(int x, int y) : MoveableGridItem(x, y, MOUSE), alive_(true), escaped_(false), mouse_dx_(0), mouse_dy_(0)
 {
+	position_in_middle_of_grid();
 }
 
 bool Mouse::is_alive() const
@@ -39,11 +40,11 @@ void Mouse::escape_into_hole()
 	escaped_ = true;
 }
 
-void Mouse::scamper(char k)
+void Mouse::scamper(const char k)
 {
 	// move mouse in required direction
 	// pre: k is an arrow representing the direction in which the mouse moves
-
+	assert(k == LEFT || RIGHT || UP || DOWN);
 	// find direction indicated by k
 	switch (k)
 	{
@@ -75,6 +76,16 @@ void Mouse::scamper(char k)
 void Mouse::position_in_middle_of_grid()
 {
 	set_position(SIZE / 2, SIZE / 2);
+}
+
+bool Mouse::can_collect_nut(Nut n) const {
+	return ((n.get_x() == get_x()) && (n.get_y() == get_y()));
+}
+
+void Mouse::reset() {
+	position_in_middle_of_grid();
+	alive_ = true;
+	escaped_ = false;
 }
  
 

@@ -55,3 +55,7 @@ void Snake::set_direction(int& dx, int& dy)
 	else if (get_y() > p_mouse_->get_y())     // if snake is below mouse
 		dy = -1;						 // snake should move up
 }
+
+void Snake::reset() {
+	position_at_random();
+}

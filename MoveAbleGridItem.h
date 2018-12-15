@@ -7,7 +7,7 @@
 class MoveableGridItem : public GridItem {
 public:
 	// constructor
-	MoveableGridItem(int x, int y, char symbol);
+	MoveableGridItem(int x, int y, const char symbol);
 	int get_x() const;
 	int get_y() const;
 	const bool is_at_position(const int x, const int y) const;

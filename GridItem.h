@@ -1,14 +1,13 @@
 #ifndef GridItemH
 #define GridItemH
-
 class GridItem 
 {
 public:
-	GridItem(char symbol);
+	GridItem(const char symbol);
 	char get_symbol() const;
 
 private:
-	char symbol;
+	const char symbol_;
 };
 
 
