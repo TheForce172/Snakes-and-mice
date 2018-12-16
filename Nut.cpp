@@ -1,37 +1,22 @@
 #include "Nut.h"
 
-Nut::Nut(int x, int y) : MoveableGridItem(x, y), symbol_(NUT)
+Nut::Nut(int x, int y) : MoveableGridItem(x, y, NUT)
 {
 	//disappear();
 	//int x = 8;
 	//int y = 9;
 }
 
-int Nut::get_x() const
+bool Nut::has_been_collected() const
 {
-	return x_;
+	return collected_;
 }
 
-int Nut::get_y() const
-{
-	return y_;
+void Nut::disappear() {
+
 }
 
-char Nut::get_symbol() const
-{
-	return symbol_;
-}
-
-bool Nut::is_at_position(int x, int y) const
-{
-	return (x_ == x) && (y_ == y);
-}
-
-bool Nut::has_been_collected(int x, int y) const
-{
-	return true;
-}
-
-void disappear() {
-
+void Nut::reset() {
+	collected_ = false;
+	set_position(8, 9);
 }

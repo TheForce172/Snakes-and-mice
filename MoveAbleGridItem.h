@@ -7,16 +7,17 @@
 class MoveableGridItem : public GridItem {
 public:
 	// constructor
-	MoveableGridItem(int x, int y, char symbol);
+	MoveableGridItem(int x, int y, const char symbol);
 	int get_x() const;
 	int get_y() const;
-	const bool is_at_position(int x, int y) const;
-	void update_position(int dx, int dy);
-	void reset_position(int x, int y);
+	const bool is_at_position(const int x, const int y) const;
+	void update_position(const int dx, const int dy);
+	void reset_position(const int x, const int y);
 	void position_at_random();
+	void set_position(const int, const int);
 	RandomNumberGenerator rng_;
 private:
-	int x, y;
+	int x_, y_;
 };
 
 #endif

@@ -1,9 +1,9 @@
 #include "GridItem.h"
 
-GridItem::GridItem(const char symbol) : symbol() 
+GridItem::GridItem(const char symbol) : symbol_(symbol)
 {}
 
-const char GridItem::get_symbol() const 
+char GridItem::get_symbol() const 
 {
-	return symbol;
+	return symbol_;
 }

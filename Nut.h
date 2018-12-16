@@ -8,24 +8,16 @@ class Nut : public MoveableGridItem{
 public:
 	// constructor
 	Nut(int, int);
-	
-	int get_x() const;
-	int get_y() const;
 
-	char get_symbol() const;
-
-	bool has_been_collected(int x, int y) const;
-	bool is_at_position(int x, int y) const;
+	bool has_been_collected() const;
 
 	void disappear();
 
-	
+	void reset();
 
 private:
 	// data members		
-	int  x_, y_;
-	char symbol_;
-	bool collected;
+	bool collected_;
 
 	
 

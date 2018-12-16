@@ -8,6 +8,6 @@ public:
 	int get_amount() const;
 	void update_amount(int amt);
 private:
-	int amount_;
+	int amount_ = 0;
 };
 

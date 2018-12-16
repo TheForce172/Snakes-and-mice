@@ -23,6 +23,7 @@ public:
 	bool is_continue_key_code(int) const;
 	bool play() const;
 private:
+	void reset();
 	bool play_;
 	int key_;
 	bool got_nut;
