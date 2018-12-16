@@ -26,7 +26,6 @@ void Snake::spot_mouse(Mouse* p_mouse)
 {
 	// pre-condition: The mouse needs to exist 
 	assert(p_mouse != nullptr);
-
 	p_mouse_ = p_mouse;
 }
 
