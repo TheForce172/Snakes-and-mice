@@ -64,7 +64,7 @@ void Snake::moveTail(int snake_dx, int snake_dy)
 	const int maxTail = 3;
 	if (tail_.size() != maxTail)
 	{
-		MoveableGridItem mvGridItem = MoveableGridItem(get_x(), get_y(), TAIL);
+		MoveableGridItem mvGridItem = MoveableGridItem(get_x(), get_y(), SNAKETAIL);
 		tail_.insert(tail_.end(), mvGridItem);
 	}
 
