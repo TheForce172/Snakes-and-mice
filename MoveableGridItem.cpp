@@ -36,5 +36,8 @@ MoveableGridItem::MoveableGridItem(int x, int y, const char symbol) : GridItem(s
 		y_ = y;
 	}
 
-
+	void MoveableGridItem::setPrivateMember(const int dx, const int dy) {
+		x_ = dx;
+		y_ = dy;
+	}
 

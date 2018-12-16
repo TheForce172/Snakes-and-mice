@@ -12,6 +12,7 @@ public:
 	int get_y() const;
 	const bool is_at_position(const int x, const int y) const;
 	void update_position(const int dx, const int dy);
+	void setPrivateMember(const int dx, const int dy);
 	void reset_position(const int x, const int y);
 	void position_at_random();
 	void set_position(const int, const int);

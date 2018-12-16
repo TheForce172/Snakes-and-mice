@@ -12,7 +12,11 @@ class Snake : public MoveableGridItem{
 		void spot_mouse(Mouse* p_mouse);
 		void chase_mouse();
 		void reset();
-		
+		void set_direction(int& dx, int& dy);
+		void moveTail(int snake_dx, int snake_dy);
+		char getTailSymbol();
+		bool gridAtTail(int row, int col);
+		vector<MoveableGridItem> tail_;
 // getter 
 
 private:

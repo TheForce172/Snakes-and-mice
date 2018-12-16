@@ -2,6 +2,7 @@
 
 Mouse::Mouse(int x, int y) : MoveableGridItem(x, y, MOUSE), alive_(true), escaped_(false), mouse_dx_(0), mouse_dy_(0)
 {
+	setPrivateMember(x, y);
 	position_in_middle_of_grid();
 }
 
