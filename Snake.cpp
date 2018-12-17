@@ -97,7 +97,7 @@ bool Snake::gridAtTail(int row, int col) const
 
 void Snake::reset() {
 	position_at_random();
-	for (int i = 0; i < tail_.size; i++) {
+	for (int i = 0; i < tail_.size(); i++) {
 		tail_[i].set_position(get_x(), get_y());
 	}
 }

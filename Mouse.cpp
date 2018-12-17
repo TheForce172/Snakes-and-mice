@@ -20,9 +20,8 @@ bool Mouse::has_reached_a_hole(Underground ug) const
 {
 	for (int h_no(0); h_no < ug.get_num_holes(); ++h_no)
 	{
-		Hole h = ug.get_hole_no(h_no);
 
-		if (is_at_position(h.get_x(), h.get_y()))
+		if (is_at_position(ug.get_hole_no(h_no).get_x(), ug.get_hole_no(h_no).get_y()))
 		{
 			return true;
 		}

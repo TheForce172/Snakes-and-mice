@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Game::Game(string n) : player_(n), underground_({ Hole(4,3), Hole(15,10), Hole(7,15) }), mouse_(0,0), snake_(0,0,3), nut_(8,9) {
+Game::Game(string n) : player_(n), mouse_(0,0), snake_(0,0,3), nut_(8,9) {
 
 }
 
@@ -194,5 +194,5 @@ void Game::reset() {
 }
 
 void Game::end_message() {
-	p_ui->show_results_on_screen("FINAL SCORE: " + to_string(player_.get_score()));
+	p_ui->show_results_on_screen("\nFINAL SCORE: " + to_string(player_.get_score()));
 }

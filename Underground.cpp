@@ -3,7 +3,7 @@
 // number of holes in underground
 const int MAXHOLES(3);
 
-Underground::Underground(vector<Hole> list) : holes_(list)
+Underground::Underground() : holes_({ Hole(4,3), Hole(15,10), Hole(7,15) })
 {
 }
 
