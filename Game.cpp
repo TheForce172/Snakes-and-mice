@@ -45,7 +45,7 @@ void Game::run()
 	if (nut_.has_been_collected() && mouse_.has_escaped())
 	player_.update_score(1);
 	p_ui->show_results_on_screen(prepare_end_message());
-	cout << "\n Press y to continue, anything else to quit";
+	p_ui->show_results_on_screen("\n Press y to continue, anything else to quit");
 	key_ = p_ui->get_keypress_from_user();
 	if (is_continue_key_code(key_)) {
 		play_ = true;
@@ -84,7 +84,12 @@ string Game::prepare_grid() const
 						os << underground_.get_hole_no(hole_no).get_symbol();
 					else
 						if ((row == nut_.get_y()) && (col == nut_.get_x()))
-							os << nut_.get_symbol();
+							if (!nut_.has_been_collected()) {
+								os << nut_.get_symbol();
+							}
+							else {
+								os << FREECELL;
+							}
 						else
 							if ((snake_.gridAtTail(row, col)))
 								os << snake_.getTailSymbol();
@@ -92,6 +97,9 @@ string Game::prepare_grid() const
 								os << FREECELL;
 				}
 			}
+		}
+		if (row == SIZE / 2) {
+			os << "\t\t\t" + player_.get_name() + ": " + to_string(player_.get_score());
 		}
 		os << endl;
 	}
@@ -133,7 +141,7 @@ void Game::apply_rules()
 		{
 			if (mouse_.can_collect_nut(nut_))
 			{
-				got_nut = true;
+				nut_.disappear();
 			}
 		}
 		
@@ -148,10 +156,14 @@ bool Game::has_ended(char key) const
 string Game::prepare_end_message() const
 {
 	ostringstream os;
-	if (mouse_.has_escaped())
+	if (nut_.has_been_collected() && mouse_.has_escaped() )
 	{
-		os << "\n\nEND OF GAME: THE MOUSE ESCAPED UNDERGROUND!";
+		os << "\n\nEND OF GAME: THE MOUSE ESCAPED UNDERGROUND AND COLLECTED THE NUT! SCORE + 1";
 	}
+
+	else if (mouse_.has_escaped()){
+
+		}
 	else
 	{
 		if (!mouse_.is_alive())
@@ -179,4 +191,8 @@ void Game::reset() {
 	snake_.reset();
 	mouse_.reset();
 	nut_.reset();
+}
+
+void Game::end_message() {
+	p_ui->show_results_on_screen("FINAL SCORE: " + to_string(player_.get_score()));
 }

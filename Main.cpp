@@ -17,7 +17,7 @@ int main()
 		game.set_up(&ui);
 		game.run();
 	} while (game.play());
-
+	game.end_message();
 	ui.hold_window();
 	return 0;
 }

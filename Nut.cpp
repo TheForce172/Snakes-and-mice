@@ -14,7 +14,7 @@ bool Nut::has_been_collected() const
 }
 
 void Nut::disappear() {
-
+	collected_ = true;
 }
 
 void Nut::reset() {

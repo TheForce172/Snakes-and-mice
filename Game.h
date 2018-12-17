@@ -22,6 +22,7 @@ public:
 	string prepare_end_message() const;
 	bool is_continue_key_code(int) const;
 	bool play() const;
+	void end_message();
 private:
 	void reset();
 	bool play_;
