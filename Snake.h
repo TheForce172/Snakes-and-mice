@@ -6,15 +6,15 @@
 #include "MoveableGridItem.h"
 class Snake : public MoveableGridItem{
 	public:
-		Snake(int, int);
+		Snake(int, int, int);
 		~Snake();
 		bool has_caught_mouse() const;
 		void spot_mouse(Mouse* p_mouse);
 		void chase_mouse();
 		void reset();
 		void moveTail(int snake_dx, int snake_dy);
-		char getTailSymbol();
-		bool gridAtTail(int row, int col);
+		char getTailSymbol() const;
+		bool gridAtTail(int row, int col) const;
 		vector<MoveableGridItem> tail_;
 // getter 
 

@@ -1,12 +1,9 @@
 #include "Snake.h"
-#include "Mouse.h"
-#include "RandomNumberGenerator.h"
-#include "Constants.h"
 
-Snake::Snake(int x, int y) : MoveableGridItem(x, y, SNAKEHEAD)
+Snake::Snake(int x, int y, int maxTail) : MoveableGridItem(x, y, SNAKEHEAD), tail_({MoveableGridItem(0,0,SNAKETAIL), MoveableGridItem(0,0,SNAKETAIL), MoveableGridItem(0,0,SNAKETAIL)})
 {
 	position_at_random();
-	setPrivateMember(rng_.get_random_value(SIZE), rng_.get_random_value(SIZE));
+	//setPrivateMember(rng_.get_random_value(SIZE), rng_.get_random_value(SIZE));
 	// make the pointer safe before the snake spots the mouse
 	p_mouse_ = nullptr;
 }
@@ -61,38 +58,31 @@ void Snake::set_direction(int& dx, int& dy)
 
 void Snake::moveTail(int snake_dx, int snake_dy)
 {
-	const int maxTail = 3;
-	if (tail_.size() != maxTail)
-	{
-		MoveableGridItem mvGridItem = MoveableGridItem(get_x(), get_y(), SNAKETAIL);
-		tail_.insert(tail_.end(), mvGridItem);
-	}
-
 	if (tail_.size() == 1)
 	{
-		tail_.at(0).setPrivateMember(get_x() - snake_dx, get_y() - snake_dy); //set first tail piece to heads previous position
+		tail_.at(0).set_position(get_x() - snake_dx, get_y() - snake_dy); //set first tail piece to heads previous position
 	}
 
 	else if (tail_.size() == 2)
 	{
-		tail_.at(1).setPrivateMember(tail_.at(0).get_x(), tail_.at(0).get_y()); //set second tail piece to first tail pieces previous position
-		tail_.at(0).setPrivateMember(get_x() - snake_dx, get_y() - snake_dy); //set first tail piece to heads previous position
+		tail_.at(1).set_position(tail_.at(0).get_x(), tail_.at(0).get_y()); //set second tail piece to first tail pieces previous position
+		tail_.at(0).set_position(get_x() - snake_dx, get_y() - snake_dy); //set first tail piece to heads previous position
 	}
 
 	else if (tail_.size() == 3)
 	{
-		tail_.at(2).setPrivateMember(tail_.at(1).get_x(), tail_.at(1).get_y());//set third tail piece to second tail pieces previous position
-		tail_.at(1).setPrivateMember(tail_.at(0).get_x(), tail_.at(0).get_y()); //set second tail piece to first tail pieces previous position
-		tail_.at(0).setPrivateMember(get_x() - snake_dx, get_y() - snake_dy); //set first tail piece to heads previous position
+		tail_.at(2).set_position(tail_.at(1).get_x(), tail_.at(1).get_y());//set third tail piece to second tail pieces previous position
+		tail_.at(1).set_position(tail_.at(0).get_x(), tail_.at(0).get_y()); //set second tail piece to first tail pieces previous position
+		tail_.at(0).set_position(get_x() - snake_dx, get_y() - snake_dy); //set first tail piece to heads previous position
 	}
 }
 
-char Snake::getTailSymbol()
+char Snake::getTailSymbol() const
 {
 	return tail_.at(0).get_symbol();
 }
 
-bool Snake::gridAtTail(int row, int col)
+bool Snake::gridAtTail(int row, int col) const
 {
 	bool success = false;
 	for (int i = 0; i < tail_.size(); i++)

@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Game::Game(string n) : player_(n), underground_({ Hole(4,3), Hole(15,10), Hole(7,15) }), mouse_(0,0), snake_(0,0), nut_(8,9) {
+Game::Game(string n) : player_(n), underground_({ Hole(4,3), Hole(15,10), Hole(7,15) }), mouse_(0,0), snake_(0,0,3), nut_(8,9) {
 
 }
 
@@ -86,7 +86,10 @@ string Game::prepare_grid() const
 						if ((row == nut_.get_y()) && (col == nut_.get_x()))
 							os << nut_.get_symbol();
 						else
-							os << FREECELL;
+							if ((snake_.gridAtTail(row, col)))
+								os << snake_.getTailSymbol();
+							else
+								os << FREECELL;
 				}
 			}
 		}

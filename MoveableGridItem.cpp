@@ -1,7 +1,8 @@
-#include "MoveAbleGridItem.h" 
+#include "MoveableGridItem.h" 
 
-MoveableGridItem::MoveableGridItem(int x, int y, const char symbol) : GridItem(symbol), x_(x), y_(y)
-{}
+MoveableGridItem::MoveableGridItem(const int x, const int y, const char symbol) : GridItem(symbol), x_(x), y_(y)
+{
+}
 	int MoveableGridItem::get_x() const
 	{
 		return x_;
@@ -12,7 +13,7 @@ MoveableGridItem::MoveableGridItem(int x, int y, const char symbol) : GridItem(s
 		return y_;
 	}
 
-	const bool MoveableGridItem::is_at_position(const int x, const int y) const
+	bool MoveableGridItem::is_at_position(const int x, const int y) const
 	{
 		return (x == x_) && (y == y_);
 	}
@@ -35,9 +36,3 @@ MoveableGridItem::MoveableGridItem(int x, int y, const char symbol) : GridItem(s
 		x_ = x;
 		y_ = y;
 	}
-
-	void MoveableGridItem::setPrivateMember(const int dx, const int dy) {
-		x_ = dx;
-		y_ = dy;
-	}
-
