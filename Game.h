@@ -23,6 +23,8 @@ public:
 	bool is_continue_key_code(int) const;
 	bool play() const;
 	void end_message();
+	bool enableCheatMode();
+	bool CheatMode = false;
 private:
 	void reset();
 	bool play_;
