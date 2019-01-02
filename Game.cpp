@@ -35,31 +35,10 @@ void Game::run()
 		if (is_arrow_key_code(key_))
 		{
 			mouse_.scamper(key_);
-			if (CheatMode == false) 
-			{
-				snake_.chase_mouse();
-			}
-			
+			snake_.chase_mouse();
 			p_ui->draw_grid_on_screen(prepare_grid());
 			apply_rules();
 		}
-		else 
-			if (enableCheatMode())
-			{
-				if (CheatMode == false)
-				{
-					CheatMode = true;
-					cout << "\t\tCHEATMODE ENABLED \n";
-					cout << "\t\t\t\Snake has stopped moving!";
-				}
-
-				else 
-				{
-					CheatMode = false;
-					cout << "\t\tCHEATMODE DISABLED ";
-					
-				}
-			}
 
 		key_ = p_ui->get_keypress_from_user();
 	}
@@ -126,11 +105,6 @@ string Game::prepare_grid() const
 	}
 
 	return os.str();
-}
-
-bool Game::enableCheatMode()
-{
-	return toupper(key_) == CHEAT;
 }
 
 bool Game::is_arrow_key_code(int keycode) const
