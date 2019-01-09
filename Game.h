@@ -6,6 +6,7 @@
 #include"UserInterface.h"
 #include "Nut.h"
 #include "Player.h"
+#include "Underground.h"
 #include <iostream>
 #include <sstream>
 class Game {

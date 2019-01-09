@@ -1,6 +1,6 @@
 #include "Mouse.h"
 
-Mouse::Mouse(int x, int y) : MoveableGridItem(x, y, MOUSE), alive_(true), escaped_(false), mouse_dx_(0), mouse_dy_(0)
+Mouse::Mouse(int x, int y) : MoveableGridItem(x, y, MOUSE), alive_(true), escaped_(false)
 {
 	//setPrivateMember(x, y);
 	position_in_middle_of_grid();
@@ -46,30 +46,31 @@ void Mouse::scamper(const char k)
 	// pre: k is an arrow representing the direction in which the mouse moves
 	assert(k == LEFT || RIGHT || UP || DOWN);
 	// find direction indicated by k
+	int mouse_dx, mouse_dy;
 	switch (k)
 	{
 		case LEFT:
-			mouse_dx_ = -1;
-			mouse_dy_ = 0;
+			mouse_dx = -1;
+			mouse_dy = 0;
 			break;
 		case RIGHT:
-			mouse_dx_ = +1;
-			mouse_dy_ = 0;
+			mouse_dx = +1;
+			mouse_dy = 0;
 			break;
 		case UP:
-			mouse_dx_ = 0;
-			mouse_dy_ = -1;
+			mouse_dx = 0;
+			mouse_dy = -1;
 			break;
 		case DOWN:
-			mouse_dx_ = 0;
-			mouse_dy_ = +1;
+			mouse_dx = 0;
+			mouse_dy = +1;
 			break;
 	}
 
 	// update mouse coordinates if move is possible
-	if (((get_x() + mouse_dx_) >= 1) && ((get_x() + mouse_dx_) <= SIZE) && ((get_y() + mouse_dy_) >= 1) && ((get_y() + mouse_dy_) <= SIZE))
+	if (((get_x() + mouse_dx) >= 1) && ((get_x() + mouse_dx) <= SIZE) && ((get_y() + mouse_dy) >= 1) && ((get_y() + mouse_dy) <= SIZE))
 	{
-		update_position(mouse_dx_, mouse_dy_);
+		update_position(mouse_dx, mouse_dy);
 	}
 }
 

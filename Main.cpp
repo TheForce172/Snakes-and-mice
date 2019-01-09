@@ -5,10 +5,10 @@ using namespace std;
 #include "Game.h"
 
 // using OO approach
-UserInterface ui;
 
 int main()
 {
+	UserInterface ui;
 	cout << "Please input your Name";
 	string n;
 	cin >> n;

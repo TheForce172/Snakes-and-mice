@@ -50,7 +50,7 @@ void Game::run()
 				{
 					CheatMode = true;
 					cout << "\t\tCHEATMODE ENABLED \n";
-					cout << "\t\t\t\Snake has stopped moving!";
+					cout << "\t\t\t Snake has stopped moving!";
 				}
 
 				else 
@@ -104,13 +104,8 @@ string Game::prepare_grid() const
 					if (hole_no != -1)
 						os << underground_.get_hole_no(hole_no).get_symbol();
 					else
-						if ((row == nut_.get_y()) && (col == nut_.get_x()))
-							if (!nut_.has_been_collected()) {
+						if ((row == nut_.get_y()) && (col == nut_.get_x()) && !(nut_.has_been_collected()))
 								os << nut_.get_symbol();
-							}
-							else {
-								os << FREECELL;
-							}
 						else
 							if ((snake_.gridAtTail(row, col)))
 								os << snake_.getTailSymbol();

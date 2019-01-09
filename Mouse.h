@@ -33,8 +33,6 @@ class Mouse : public MoveableGridItem{
 		// data members		
 		bool alive_;
 		bool escaped_;
-		int mouse_dx_;
-		int mouse_dy_;
 
 		// supporting functions 
 		void position_in_middle_of_grid();
