@@ -7,7 +7,7 @@ Underground::Underground() : holes_({ Hole(4,3), Hole(15,10), Hole(7,15) })
 {
 }
 
-Hole Underground::get_hole_no(int no) const
+/*Hole Underground::get_hole_no(int no) const
 {
 	// pre-condition: valid hole number
 	assert(is_valid_hole_number(no));
@@ -15,7 +15,7 @@ Hole Underground::get_hole_no(int no) const
 	return holes_.at(no);
 }
 
-/*void Underground::set_hole_no_at_position(int no, int x, int y)
+void Underground::set_hole_no_at_position(int no, int x, int y)
 {
 	// pre-condition: valid hole number
 	assert(is_valid_hole_number(no));
@@ -37,4 +37,18 @@ bool Underground::is_valid_hole_number(int no) const
 
 size_t Underground::get_num_holes() const{
 	return holes_.size();
+}
+
+bool Underground::is_Hole(const int x, const int y) const{
+	int hole = false;
+	for (int i = 0; i < holes_.size(); i++) {
+		if (holes_[i].is_at_position(x,y)){
+			hole = true;
+		}
+	}
+	return hole;
+}
+
+char Underground::get_hole_symbol() const{
+	return holes_[0].get_symbol();
 }

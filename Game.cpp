@@ -16,7 +16,18 @@ void Game::set_up(UserInterface* pui)
 	//underground_.set_hole_no_at_position(2, 7, 15);
 	// mouse state already set up in its contructor
 	// set up snake
-	snake_.position_at_random();
+	vector<MoveableGridItem*> elements{ &mouse_,&snake_,&nut_ };
+	for (int i = 0; i < elements.size(); i++) {
+		int set = false;
+		while (!set) {
+			elements[i]->position_at_random();
+			if (!isObjectAtPosistion(elements[i]->get_x(), elements[i]->get_y())) {
+				set = true;
+			}
+		}
+		}
+	//snake_.position_at_random();
+
 	snake_.spot_mouse(&mouse_);
 
 	// set up the UserInterface
@@ -64,7 +75,7 @@ void Game::run()
 		key_ = p_ui->get_keypress_from_user();
 	}
 	if (nut_.has_been_collected() && mouse_.has_escaped())
-	player_.update_score(1);
+		player_.update_score(1);
 	p_ui->show_results_on_screen(prepare_end_message());
 	p_ui->show_results_on_screen("\n Press y to continue, anything else to quit");
 	key_ = p_ui->get_keypress_from_user();
@@ -99,10 +110,9 @@ string Game::prepare_grid() const
 				}
 				else
 				{
-					const int hole_no(find_hole_number_at_position(col, row));
 
-					if (hole_no != -1)
-						os << underground_.get_hole_no(hole_no).get_symbol();
+					if (underground_.is_Hole(col,row))
+						os << underground_.get_hole_symbol();
 					else
 						if ((row == nut_.get_y()) && (col == nut_.get_x()) && !(nut_.has_been_collected()))
 								os << nut_.get_symbol();
@@ -131,19 +141,6 @@ bool Game::enableCheatMode()
 bool Game::is_arrow_key_code(int keycode) const
 {
 	return (keycode == LEFT) || (keycode == RIGHT) || (keycode == UP) || (keycode == DOWN);
-}
-
-int Game::find_hole_number_at_position(int x, int y) const
-{
-	for (int h_no(0); h_no < underground_.get_num_holes(); ++h_no)
-	{
-		if (underground_.get_hole_no(h_no).is_at_position(x, y))
-		{
-			return h_no;
-		}
-	}
-
-	return -1; // not a hole
 }
 
 void Game::apply_rules()
@@ -216,4 +213,27 @@ void Game::reset() {
 
 void Game::end_message() {
 	p_ui->show_results_on_screen("\nFINAL SCORE: " + to_string(player_.get_score()));
+}
+
+bool Game::isObjectAtPosistion(int x, int y) {
+	bool clear = true;
+	if (mouse_.is_at_position(x, y)) {
+		clear = false;
+	}
+	else {
+		if (snake_.is_at_position(x, y)) {
+			clear = false;
+		}
+		else {
+			if (nut_.is_at_position(x, y)) {
+				clear = false;
+			}
+			else {
+				if (underground_.is_Hole(x,y)) {
+					clear = false;
+				}
+			}
+		}
+	}
+	return !clear;
 }

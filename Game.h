@@ -18,15 +18,16 @@ public:
 	string prepare_grid() const;
 	bool is_arrow_key_code(int keycode) const;
 	void apply_rules();
-	int find_hole_number_at_position(int x, int y) const;
+	//int find_hole_number_at_position(int x, int y) const;
 	bool has_ended(char key) const;
 	string prepare_end_message() const;
 	bool is_continue_key_code(int) const;
 	bool play() const;
 	void end_message();
 	bool enableCheatMode();
-	bool CheatMode = false;
+	bool isObjectAtPosistion(int, int);
 private:
+	bool CheatMode = false;
 	void reset();
 	bool play_;
 	int key_;

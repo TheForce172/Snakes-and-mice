@@ -18,13 +18,8 @@ bool Mouse::has_escaped() const
 
 bool Mouse::has_reached_a_hole(Underground ug) const
 {
-	for (int h_no(0); h_no < ug.get_num_holes(); ++h_no)
-	{
-
-		if (is_at_position(ug.get_hole_no(h_no).get_x(), ug.get_hole_no(h_no).get_y()))
-		{
-			return true;
-		}
+	if (ug.is_Hole(get_x(),get_y())) {
+		return true;
 	}
 
 	return false;
