@@ -16,6 +16,7 @@ public:
 	void position_at_random();
 	void set_position(const int, const int);
 private:
+	void virtual A();
 	int x_, y_;
 	RandomNumberGenerator rng_;
 };

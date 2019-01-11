@@ -25,7 +25,7 @@ public:
 	bool play() const;
 	void end_message();
 	bool enableCheatMode();
-	bool isObjectAtPosistion(int, int);
+	bool isObjectAtPosistion(int, int, int);
 private:
 	bool CheatMode = false;
 	void reset();

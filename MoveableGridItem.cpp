@@ -3,6 +3,7 @@
 MoveableGridItem::MoveableGridItem(const int x, const int y, const char symbol) : GridItem(symbol), x_(x), y_(y)
 {
 }
+	void MoveableGridItem::A() {}
 	int MoveableGridItem::get_x() const
 	{
 		return x_;

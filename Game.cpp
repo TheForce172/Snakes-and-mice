@@ -1,7 +1,6 @@
 
 #include "Game.h"
 
-
 using namespace std;
 
 Game::Game(string n) : player_(n), mouse_(0,0), snake_(0,0,3), nut_(8,9) {
@@ -21,7 +20,7 @@ void Game::set_up(UserInterface* pui)
 		int set = false;
 		while (!set) {
 			elements[i]->position_at_random();
-			if (!isObjectAtPosistion(elements[i]->get_x(), elements[i]->get_y())) {
+			if (!isObjectAtPosistion(elements[i]->get_x(), elements[i]->get_y(), i)) {
 				set = true;
 			}
 		}
@@ -215,17 +214,17 @@ void Game::end_message() {
 	p_ui->show_results_on_screen("\nFINAL SCORE: " + to_string(player_.get_score()));
 }
 
-bool Game::isObjectAtPosistion(int x, int y) {
+bool Game::isObjectAtPosistion(int x, int y, int i) {
 	bool clear = true;
-	if (mouse_.is_at_position(x, y)) {
+	if (mouse_.is_at_position(x, y) && i!= 0) {
 		clear = false;
 	}
 	else {
-		if (snake_.is_at_position(x, y)) {
+		if (snake_.is_at_position(x, y) && i != 1) {
 			clear = false;
 		}
 		else {
-			if (nut_.is_at_position(x, y)) {
+			if (nut_.is_at_position(x, y) && i != 2) {
 				clear = false;
 			}
 			else {
