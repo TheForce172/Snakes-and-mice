@@ -38,6 +38,10 @@ private:
 	Underground underground_;
 	UserInterface* p_ui;
 	Player player_;
+	string save_game() const;
+	void load_game(ifstream&);
+	
+
 };
 
 #endif

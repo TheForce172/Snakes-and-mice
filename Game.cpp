@@ -213,6 +213,40 @@ void Game::reset() {
 void Game::end_message() {
 	p_ui->show_results_on_screen("\nFINAL SCORE: " + to_string(player_.get_score()));
 }
+string Game::save_game() const
+{
+	stringstream ss;
+	// convert integer to string and store in file
+	ss << mouse_.get_x() << "\n" << mouse_.get_y()
+		<< "\n" << snake_.get_x() << "\n" << snake_.get_y();
+	return ss.str();
+
+
+}
+
+
+	
+	
+void load_game(istream& ss)
+{
+	Game::clear();
+	std::string line;
+	while (std::getline(ss, line))
+	{
+		std::istringstream cells(line);
+		std::vector<int> row;
+		int cell = 0;
+		while (cells >> cell)
+		{
+			row.push_back(cell);
+		}
+		Game.push_back(row);
+	}
+}
+
+
+
+
 
 bool Game::isObjectAtPosistion(int x, int y, int i) {
 	bool clear = true;
