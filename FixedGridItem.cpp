@@ -3,11 +3,11 @@
 FixedGridItem::FixedGridItem(const int x, const int y, char symbol):GridItem(symbol),x_(x),y_(y)
 {}
 
-const int FixedGridItem::get_x() {
+int FixedGridItem::get_x() const{
 	return x_;
 }
 
-const int FixedGridItem::get_y() {
+int FixedGridItem::get_y() const{
 	return y_;
 }
 

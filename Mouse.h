@@ -25,7 +25,7 @@ class Mouse : public MoveableGridItem{
 		void escape_into_hole();
 		void scamper(char k);
 		void reset();
-
+		void tunnel(Underground ug);
 
         // getter
 

@@ -35,6 +35,16 @@ bool Underground::is_valid_hole_number(int no) const
 	return (no >= 0) && (no < holes_.size());
 }
 
+int Underground::get_hole_x(int n) const
+{
+	return holes_[n].get_x();
+}
+
+int Underground::get_hole_y(int n) const
+{
+	return holes_[n].get_y();
+}
+
 size_t Underground::get_num_holes() const{
 	return holes_.size();
 }
