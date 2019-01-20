@@ -229,7 +229,7 @@ string Game::save_game() const
 	
 void load_game(istream& ss)
 {
-	Game::clear();
+	void clear();
 	std::string line;
 	while (std::getline(ss, line))
 	{
@@ -240,7 +240,7 @@ void load_game(istream& ss)
 		{
 			row.push_back(cell);
 		}
-		Game.push_back(row);
+		Game push_back();
 	}
 }
 

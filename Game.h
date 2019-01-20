@@ -40,7 +40,7 @@ private:
 	Player player_;
 	string save_game() const;
 	void load_game(ifstream&);
-	
+	void clear();
 
 };
 
