@@ -44,7 +44,7 @@ void Game::run()
 	{
 		if (is_arrow_key_code(key_))
 		{
-			mouse_.scamper(key_);
+			mouse_.scamper(key_, nut_);
 			if (CheatMode == false) 
 			{
 				snake_.chase_mouse();
@@ -161,7 +161,7 @@ void Game::apply_rules()
 		}
 		else 
 		{
-			if (mouse_.can_collect_nut(nut_))
+			if (underground_.is_Hole(nut_.get_x(),nut_.get_y()));
 			{
 				nut_.disappear();
 			}
