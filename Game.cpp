@@ -82,7 +82,8 @@ void Game::run()
 				}
 
 			}
-			else if (is_arrow_key_save(key_)){
+			else 
+				if (is_arrow_key_save(key_)){
 			 
 				save_game();
 			}
@@ -201,7 +202,7 @@ bool Game::is_arrow_key_save(int keycode) const
 }
 bool Game::is_arrow_key_load (int keycode) const
 {
-	return (keycode == 'l');
+	return (keycode == 'L');
 }
 
 string Game::prepare_end_message() const
