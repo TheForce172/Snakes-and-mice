@@ -242,20 +242,17 @@ void Game::end_message() {
 
 void Game::save_game() const
 {
-	string game = prepare_grid();
+	//string game = prepare_grid();
 	ofstream fout;
 	fout.open("Game.txt", ios::out);
 	if (fout.fail()) cout << "\nError saving game.";
-	else             fout << game; // operator << for Game instances
+	else             //fout << game; // operator << for Game instances
+		fout << mouse_.get_x() << "\n" << mouse_.get_y()
+		<< "\n" << snake_.get_x() << "\n" << snake_.get_y() << "\n";
+	fout;
 	fout.close();
 
-	 
-
-	stringstream fout;
 	// convert integer to string and store in file
-	   fout << mouse_.get_x() << "\n" << mouse_.get_y()
-		<< "\n" << snake_.get_x() << "\n" << snake_.get_y() << "\n";
-	    fout;
 	
 
 
