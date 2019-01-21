@@ -35,7 +35,7 @@ void Mouse::escape_into_hole()
 	escaped_ = true;
 }
 
-void Mouse::scamper(const char k)
+void Mouse::scamper(const char k, Nut n)
 {
 	// move mouse in required direction
 	// pre: k is an arrow representing the direction in which the mouse moves
@@ -66,6 +66,12 @@ void Mouse::scamper(const char k)
 	if (((get_x() + mouse_dx) >= 1) && ((get_x() + mouse_dx) <= SIZE) && ((get_y() + mouse_dy) >= 1) && ((get_y() + mouse_dy) <= SIZE))
 	{
 		update_position(mouse_dx, mouse_dy);
+	}
+
+	//Pushable Nut
+	if (mouse.get_x() == get_x()) && (mouse.get_y() == get_y()) = (n.get_x() == get_x()) && (n.get_y() == get_y()))
+	{
+	
 	}
 }
 
