@@ -249,7 +249,6 @@ void Game::save_game() const
 	else             //fout << game; // operator << for Game instances
 		fout << mouse_.get_x() << "\n" << mouse_.get_y()
 		<< "\n" << snake_.get_x() << "\n" << snake_.get_y() << "\n";
-	fout;
 	fout.close();
 
 	// convert integer to string and store in file
