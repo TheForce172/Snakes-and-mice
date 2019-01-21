@@ -9,6 +9,8 @@
 #include "Underground.h"
 #include <iostream>
 #include <sstream>
+#include <fstream>
+
 class Game {
 public:
 	Game(string);
@@ -39,7 +41,7 @@ private:
 	UserInterface* p_ui;
 	Player player_;
 	string save_game() const;
-	void load_game(istream&);
+	void load_game(ifstream, string);
 	
 
 };
