@@ -248,7 +248,11 @@ void Game::save_game() const
 	if (fout.fail()) cout << "\nError saving game.";
 	else             //fout << game; // operator << for Game instances
 		fout << mouse_.get_x() << "\n" << mouse_.get_y()
-		<< "\n" << snake_.get_x() << "\n" << snake_.get_y() << "\n";
+		<< "\n" << snake_.get_x() << "\n" << snake_.get_y() << "\n" 
+		
+		<< nut_.get_x() << "\n" << nut_.get_y() << "\n"
+        << player_.get_score() << "\n"
+		<< player_.get_name() << "\n";
 	fout;
 	fout.close();
 
