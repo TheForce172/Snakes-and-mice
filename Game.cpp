@@ -41,11 +41,20 @@ void Game::run()
 	key_ = p_ui->get_keypress_from_user();
 
 	while (!has_ended(key_))
-	{
+
+	{ // cheeking for input if game not end
+		
+	//	if (is_arrow_key_save) {
+		
+		
+		
+		
+		
+		//}
 		if (is_arrow_key_code(key_))
 		{
-			mouse_.scamper(key_);
-			if (CheatMode == false) 
+		//	mouse_.scamper(key_);
+			if (CheatMode == false)   // 
 			{
 				snake_.chase_mouse();
 			}
@@ -175,6 +184,11 @@ bool Game::has_ended(char key) const
 	return ((key == 'Q') || (!mouse_.is_alive()) || (mouse_.has_escaped()));
 }
 
+bool Game::is_arrow_key_save(int keycode) const
+{
+	return (keycode == 'S');
+}
+
 string Game::prepare_end_message() const
 {
 	ostringstream os;
@@ -218,52 +232,51 @@ void Game::reset() {
 void Game::end_message() {
 	p_ui->show_results_on_screen("\nFINAL SCORE: " + to_string(player_.get_score()));
 }
-string Game::save_game() const
+
+void Game::save_game() const
 {
-	stringstream ss;
-	// convert integer to string and store in file
-	ss << mouse_.get_x() << " mouse_X\n" << mouse_.get_y()
-		<< "mouse_y\n" << snake_.get_x() << "snake_X\n" << snake_.get_y() << "snake_y\n";
-	return ss.str();
+	string game = prepare_end_message();
+	ofstream fout;
+	fout.open("Game.txt", ios::out);
+	if (fout.fail()) cout << "\nError saving game.";
+	else             fout << game; // operator << for Game instances
+	fout.close();
+
+	 
+
+	//stringstream ss;
+	//// convert integer to string and store in file
+	//ss << mouse_.get_x() << "\n" << mouse_.get_y()
+	//	<< "\n" << snake_.get_x() << "\n" << snake_.get_y() << "\n";
+	// ss.str();
+	
+
 
 
 }
 		
-void Game::load_game(ifstream ss, string file)
-{
-	ss.open(file);
-	while (!ss.eof) {
-		string line;
-		int x;
-		int y;
-		getline(ss, line);
-		if (line.find("mouse_X")) {
-			x = line.substr;
-				getline(ss, line);
-				y = line.substr;
-			mouse_.set_position(x, y);
-		}
-		if (line.find("mouse_y")) {
-			x = line.substr;
-			getline(ss, line);
-			y = line.substr;
-			mouse_.set_position(x, y);
-		}
-		if (line.find("snake_X")) {
-			x = line.substr;
-			getline(ss, line);
-			y = line.substr;
-			snake_.set_position(x, y);
-		}
-		if (line.find("snake_y")) {
-			x = line.substr;
-			getline(ss, line);
-			y = line.substr;
-			snake_.set_position(x, y);
-		}
-	}
-	
-}
+//void Game::load_game(ifstream ss, string file)
+//{
+//
+//	ifstream fin;
+//	fin.open("Game.txt", ios::in);
+//	if (fin.fail()) cout << "\nError loading game.";
+//	else
+//
+//	ss.open(file);
+//	
+//		int x;
+//		int y;
+//	
+//
+//		ss >> x >> y;
+//
+//		
+//		mouse_.set_position(x, y);
+//	
+//	
+//	
+//}
 
 
 

@@ -68,11 +68,7 @@ void Mouse::scamper(const char k, Nut n)
 		update_position(mouse_dx, mouse_dy);
 	}
 
-	//Pushable Nut
-	if (mouse.get_x() == get_x()) && (mouse.get_y() == get_y()) = (n.get_x() == get_x()) && (n.get_y() == get_y()))
-	{
 	
-	}
 }
 
 void Mouse::position_in_middle_of_grid()

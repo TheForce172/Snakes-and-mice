@@ -22,6 +22,7 @@ public:
 	void apply_rules();
 	//int find_hole_number_at_position(int x, int y) const;
 	bool has_ended(char key) const;
+	bool is_arrow_key_save(int keycode) const;
 	string prepare_end_message() const;
 	bool is_continue_key_code(int) const;
 	bool play() const;
@@ -40,7 +41,7 @@ private:
 	Underground underground_;
 	UserInterface* p_ui;
 	Player player_;
-	string save_game() const;
+	void save_game() const;
 	void load_game(ifstream, string);
 	
 
