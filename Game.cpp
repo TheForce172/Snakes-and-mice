@@ -43,26 +43,26 @@ void Game::run()
 	while (!has_ended(key_))
 
 	{ // cheeking for input if game not end
-		
+
 	//	if (is_arrow_key_save) {
-		
-		
-		
-		
-		
+
+
+
+
+
 		//}
 		if (is_arrow_key_code(key_))
 		{
 			mouse_.scamper(key_, nut_);
-			if (CheatMode == false) 
+			if (CheatMode == false)
 			{
 				snake_.chase_mouse();
 			}
-			
+
 			p_ui->draw_grid_on_screen(prepare_grid());
 			apply_rules();
 		}
-		else 
+		else
 			if (enableCheatMode())
 			{
 				if (CheatMode == false)
@@ -72,12 +72,19 @@ void Game::run()
 					cout << "\t\t\t Snake has stopped moving!";
 				}
 
-				else 
+				else
 				{
 					CheatMode = false;
 					cout << "\t\tCHEATMODE DISABLED ";
 					
+
+
 				}
+
+			}
+			else if (is_arrow_key_save(key_)){
+			 
+				save_game();
 			}
 
 		key_ = p_ui->get_keypress_from_user();
@@ -235,7 +242,7 @@ void Game::end_message() {
 
 void Game::save_game() const
 {
-	string game = prepare_end_message();
+	string game = prepare_grid();
 	ofstream fout;
 	fout.open("Game.txt", ios::out);
 	if (fout.fail()) cout << "\nError saving game.";
@@ -244,11 +251,11 @@ void Game::save_game() const
 
 	 
 
-	//stringstream ss;
-	//// convert integer to string and store in file
-	//ss << mouse_.get_x() << "\n" << mouse_.get_y()
-	//	<< "\n" << snake_.get_x() << "\n" << snake_.get_y() << "\n";
-	// ss.str();
+	stringstream fout;
+	// convert integer to string and store in file
+	   fout << mouse_.get_x() << "\n" << mouse_.get_y()
+		<< "\n" << snake_.get_x() << "\n" << snake_.get_y() << "\n";
+	    fout;
 	
 
 
