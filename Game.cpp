@@ -282,13 +282,15 @@ void Game::load_game()
 
 		int x;
 		int y;
-
+		int score;
 		fin >> x >> y;
 		mouse_.set_position(x, y);
 		fin >> x >> y;
 		snake_.set_position(x, y);
 		fin >> x >> y;
 		nut_.set_position(x, y);
+		fin >> score;
+		player_.set_amount(score);
 	}
 	
 	

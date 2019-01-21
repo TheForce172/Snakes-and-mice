@@ -13,6 +13,8 @@ public:
 	int get_score() const;
 
 	void update_score(int amt);
+	void set_amount(int i);
+
 private:
 	const string name_;
 	Score score;

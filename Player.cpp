@@ -23,3 +23,7 @@ void Player::update_score(int amt)
 {
 	score.update_amount(amt);
 }
+
+void Player::set_amount(int i) {
+	score.set_amount(i);
+}
