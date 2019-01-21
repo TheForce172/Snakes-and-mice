@@ -146,7 +146,7 @@ string Game::prepare_grid() const
 			}
 		}
 		if (row == SIZE / 2) {
-			os << "\t\t\t" + player_.get_name() + ": " + to_string(player_.get_score())  << " \n\nPress S to Save  \n\nPress L to load  ";
+			os << "\t\t\t" + player_.get_name() + ": " + to_string(player_.get_score())  << " Press S to Save Press L to load  ";
 		}
 		os << endl;
 	}
