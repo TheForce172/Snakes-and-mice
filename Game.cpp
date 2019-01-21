@@ -90,6 +90,7 @@ void Game::run()
 			else if (is_arrow_key_load(key_)) {
 
 				load_game();
+				p_ui->draw_grid_on_screen(prepare_grid());
 			}
 
 		key_ = p_ui->get_keypress_from_user();
