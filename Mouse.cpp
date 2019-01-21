@@ -35,7 +35,7 @@ void Mouse::escape_into_hole()
 	escaped_ = true;
 }
 
-void Mouse::scamper(const char k, Nut n)
+void Mouse::scamper(const char k, Nut& n)
 {
 	// move mouse in required direction
 	// pre: k is an arrow representing the direction in which the mouse moves

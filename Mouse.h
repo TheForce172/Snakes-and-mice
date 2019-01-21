@@ -23,7 +23,7 @@ class Mouse : public MoveableGridItem{
 		// mutators
 		void die();
 		void escape_into_hole();
-		void scamper(char k, Nut);
+		void scamper(char k, Nut&);
 		void reset();
 		void tunnel(Underground ug);
 
