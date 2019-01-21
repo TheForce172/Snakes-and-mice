@@ -19,3 +19,6 @@ int Score::get_amount() const
 void Score::update_amount(int amt) {
 	amount_ += amt;
 }
+void Score::set_amount(int i) {
+	amount_ = i;
+}

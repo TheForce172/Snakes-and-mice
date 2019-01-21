@@ -46,7 +46,6 @@ private:
 	void load_game(); 
 	
 	
-
 };
 
 #endif

@@ -85,7 +85,7 @@ void Game::run()
 			else 
 				if (is_arrow_key_save(key_)){
 			 
-				save_game();
+				save_game(); 
 			}
 			else if (is_arrow_key_load(key_)) {
 
@@ -145,7 +145,7 @@ string Game::prepare_grid() const
 			}
 		}
 		if (row == SIZE / 2) {
-			os << "\t\t\t" + player_.get_name() + ": " + to_string(player_.get_score());
+			os << "\t\t\t" + player_.get_name() + ": " + to_string(player_.get_score())  << " \n\nPress S to Save  \n\nPress L to load  ";
 		}
 		os << endl;
 	}
@@ -282,10 +282,10 @@ void Game::load_game()
 		int x;
 		int y;
 
-
 		fin >> x >> y;
-
-
+		mouse_.set_position(x, y);
+		snake_.set_position(x, y);
+		nut_.set_position(x, y);
 		mouse_.set_position(x, y);
 	}
 	
