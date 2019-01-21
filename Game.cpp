@@ -170,7 +170,7 @@ void Game::apply_rules()
 		}
 		else 
 		{
-			if (underground_.is_Hole(nut_.get_x(),nut_.get_y()));
+			if (underground_.is_Hole(nut_.get_x(),nut_.get_y()))
 			{
 				nut_.disappear();
 			}
