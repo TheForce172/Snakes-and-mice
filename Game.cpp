@@ -242,7 +242,7 @@ void Game::end_message() {
 
 void Game::save_game() const
 {
-	string game = prepare_grid();
+	string game = prepare_end_message();
 	ofstream fout;
 	fout.open("Game.txt", ios::out);
 	if (fout.fail()) cout << "\nError saving game.";
