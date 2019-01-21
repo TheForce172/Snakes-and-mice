@@ -39,8 +39,8 @@ private:
 	UserInterface* p_ui;
 	Player player_;
 	string save_game() const;
-	void load_game(ifstream&);
-	void clear();
+	void load_game(istream&);
+	
 
 };
 

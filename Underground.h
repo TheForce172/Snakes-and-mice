@@ -19,8 +19,10 @@ class Underground
 		size_t get_num_holes() const;
 		bool is_Hole(const int, const int) const;
 		char get_hole_symbol() const;
-	private:
 		bool is_valid_hole_number(int n) const;
+		int get_hole_x(int) const;
+		int get_hole_y(int) const;
+	private:
 		const vector<Hole> holes_;
 };
 

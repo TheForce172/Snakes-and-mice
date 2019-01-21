@@ -83,6 +83,19 @@ void Mouse::reset() {
 	alive_ = true;
 	escaped_ = false;
 }
+
+void Mouse::tunnel(Underground ug)
+{		
+	int currentx = get_x();
+	int currenty = get_y();
+	do {
+
+		int hole = rand() % 3;
+		if (ug.is_valid_hole_number(hole)) {
+			set_position(ug.get_hole_x(hole), ug.get_hole_y(hole));
+		}
+	} while (get_x() == currentx && get_y() == currenty);
+}
  
 
 

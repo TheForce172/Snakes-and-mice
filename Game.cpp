@@ -152,7 +152,12 @@ void Game::apply_rules()
 	{
 		if (mouse_.has_reached_a_hole(underground_))
 		{
-			mouse_.escape_into_hole();
+			if (!nut_.has_been_collected()) {
+				mouse_.tunnel(underground_);
+			}
+			else {
+				mouse_.escape_into_hole();
+			}
 		}
 		else 
 		{
@@ -227,11 +232,11 @@ string Game::save_game() const
 
 	
 	
-void load_game(istream& ss)
+void Game::load_game(istream& ss)
 {
-	void clear();
-	std::string line;
-	while (std::getline(ss, line))
+	//clear();
+	string line;
+	while (getline(ss, line))
 	{
 		std::istringstream cells(line);
 		std::vector<int> row;
@@ -240,7 +245,7 @@ void load_game(istream& ss)
 		{
 			row.push_back(cell);
 		}
-		Game push_back();
+		//Game.push_back(row);
 	}
 }
 
