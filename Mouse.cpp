@@ -68,7 +68,12 @@ void Mouse::scamper(const char k, Nut n)
 		update_position(mouse_dx, mouse_dy);
 	}
 
-	
+
+
+	//Pushable Nut
+	if (get_x() == n.get_x() && get_y() == n.get_y()) {
+		n.update_position(mouse_dx, mouse_dy);
+	}
 }
 
 void Mouse::position_in_middle_of_grid()
@@ -76,9 +81,9 @@ void Mouse::position_in_middle_of_grid()
 	set_position(SIZE / 2, SIZE / 2);
 }
 
-bool Mouse::can_collect_nut(Nut n) const {
+/*bool Mouse::can_collect_nut(Nut n) const {
 	return ((n.get_x() == get_x()) && (n.get_y() == get_y()));
-}
+}*/
 
 void Mouse::reset() {
 	position_in_middle_of_grid();
