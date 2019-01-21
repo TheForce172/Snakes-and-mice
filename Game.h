@@ -23,6 +23,7 @@ public:
 	//int find_hole_number_at_position(int x, int y) const;
 	bool has_ended(char key) const;
 	bool is_arrow_key_save(int keycode) const;
+	bool is_arrow_key_load(int keycode) const;
 	string prepare_end_message() const;
 	bool is_continue_key_code(int) const;
 	bool play() const;
@@ -42,7 +43,8 @@ private:
 	UserInterface* p_ui;
 	Player player_;
 	void save_game() const;
-	void load_game(ifstream, string);
+	void load_game(); 
+	
 	
 
 };

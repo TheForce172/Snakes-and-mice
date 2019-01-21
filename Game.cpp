@@ -86,6 +86,10 @@ void Game::run()
 			 
 				save_game();
 			}
+			else if (is_arrow_key_load(key_)) {
+
+				load_game();
+			}
 
 		key_ = p_ui->get_keypress_from_user();
 	}
@@ -195,6 +199,10 @@ bool Game::is_arrow_key_save(int keycode) const
 {
 	return (keycode == 'S');
 }
+bool Game::is_arrow_key_load (int keycode) const
+{
+	return (keycode == 'l');
+}
 
 string Game::prepare_end_message() const
 {
@@ -249,42 +257,39 @@ void Game::save_game() const
 	else             //fout << game; // operator << for Game instances
 		fout << mouse_.get_x() << "\n" << mouse_.get_y()
 		<< "\n" << snake_.get_x() << "\n" << snake_.get_y() << "\n" 
-		
 		<< nut_.get_x() << "\n" << nut_.get_y() << "\n"
-        << player_.get_score() << "\n"
-		<< player_.get_name() << "\n";
+        << player_.get_score() << "\n";
+		//<< player_.get_name() << "\n"
 	fout;
 	fout.close();
 
 	// convert integer to string and store in file
 	
 
-s
+
 
 }
 		
-//void Game::load_game(ifstream ss, string file)
-//{
-//
-//	ifstream fin;
-//	fin.open("Game.txt", ios::in);
-//	if (fin.fail()) cout << "\nError loading game.";
-//	else
-//
-//	ss.open(file);
-//	
-//		int x;
-//		int y;
-//	
-//
-//		ss >> x >> y;
-//
-//		
-//		mouse_.set_position(x, y);
-//	
-//	
-//	
-//}
+void Game::load_game()
+{
+	ifstream fin;
+	fin.open("Game.txt", ios::in);
+	if (fin.fail()) cout << "\nError loading game.";
+	else {
+
+
+		int x;
+		int y;
+
+
+		fin >> x >> y;
+
+
+		mouse_.set_position(x, y);
+	}
+	
+	
+}
 
 
 
